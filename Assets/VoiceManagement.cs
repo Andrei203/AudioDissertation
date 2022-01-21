@@ -10,6 +10,7 @@ public class VoiceManagement : MonoBehaviour
     private KeywordRecognizer KeywordRecognizer;
     private Dictionary<string, Action> actions = new Dictionary<string, Action>();
     private DoorBehaviour door;
+    private Rigidbody pushable;
     void Start()
     {
         actions.Add("Forward", Forward);
@@ -20,6 +21,7 @@ public class VoiceManagement : MonoBehaviour
         actions.Add("back", Back);
         actions.Add("open", Open);
         actions.Add("close", Close);
+        actions.Add("hit", Hit);
 
         KeywordRecognizer = new KeywordRecognizer(actions.Keys.ToArray());
         KeywordRecognizer.OnPhraseRecognized += voiceRecognised;
@@ -71,8 +73,28 @@ public class VoiceManagement : MonoBehaviour
         door.CloseDoor();
     }
 
+
+    private void Hit()
+    {
+        if (pushable == null) return;
+        pushable.AddForce(new Vector3(1000.0f, 0.0f), ForceMode.Impulse); 
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
         door = other.GetComponent<DoorBehaviour>();
+        if(other.CompareTag("Pushable"))
+        {
+            pushable = other.transform.parent.GetComponent<Rigidbody>();
+
+        }
     }
+    //private void Update()
+    //{
+    //        if(Input.GetKeyDown(KeyCode.Space))
+    //    {
+    //        Hit();
+    //    }
+    //}
 }
