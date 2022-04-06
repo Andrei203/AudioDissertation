@@ -22,7 +22,6 @@ public class VoiceManagement : MonoBehaviour
         actions.Add("open", Open);
         actions.Add("close", Close);
         actions.Add("hit", Hit);
-
         KeywordRecognizer = new KeywordRecognizer(actions.Keys.ToArray());
         KeywordRecognizer.OnPhraseRecognized += voiceRecognised;
         KeywordRecognizer.Start();
@@ -46,11 +45,11 @@ public class VoiceManagement : MonoBehaviour
     }
     private void Left()
     {
-        transform.Translate(1, 0, 0);
+        transform.Translate(-1, 0, 0);
     } 
     private void Right()
     {
-        transform.Translate(-1, 0, 0);
+        transform.Translate(1, 0, 0);
     }
     private void Down()
     {
