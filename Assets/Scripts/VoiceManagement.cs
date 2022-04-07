@@ -23,6 +23,8 @@ public class VoiceManagement : MonoBehaviour
         actions.Add("open", Open);
         actions.Add("close", Close);
         actions.Add("hit", Hit);
+        actions.Add("ChestOpen", OpenChest);
+        actions.Add("ChestClose", CloseChest);
         KeywordRecognizer = new KeywordRecognizer(actions.Keys.ToArray());
         KeywordRecognizer.OnPhraseRecognized += voiceRecognised;
         KeywordRecognizer.Start();
@@ -71,6 +73,16 @@ public class VoiceManagement : MonoBehaviour
     {
         if (door == null) return;
         door.CloseDoor();
+    }
+    private void OpenChest()
+    {
+        if (chest == null) return;
+        chest.ChestOpen();
+    }
+    private void CloseChest()
+    {
+        if (chest == null) return;
+        chest.ChestClosed();
     }
 
 
