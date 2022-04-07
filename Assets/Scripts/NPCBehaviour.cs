@@ -5,29 +5,17 @@ using UnityEngine;
 public class NPCBehaviour : MonoBehaviour
 {
     public GameObject Player;
-    public float TargetDistance;
     public float AllowedDistance = 5;
-    public GameObject NPC;
     public float followSpeed;
-    public RaycastHit shot;
 
     // Update is called once per frame
     void Update()
     {
         transform.LookAt(Player.transform);
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out shot))
+        float TargetDistance = (Player.transform.position - transform.position).magnitude;
+        if (TargetDistance < AllowedDistance)
         {
-            TargetDistance = shot.distance;
-            if (TargetDistance >= AllowedDistance)
-            {
-                followSpeed = 0.02f;
-                transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, followSpeed);
-            }
-        }
-        else
-        {
-            followSpeed = 0;
-            
+            transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, followSpeed * Time.deltaTime);
         }
     }
 }
