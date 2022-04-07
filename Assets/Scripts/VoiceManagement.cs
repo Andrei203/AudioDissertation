@@ -10,6 +10,7 @@ public class VoiceManagement : MonoBehaviour
     private KeywordRecognizer KeywordRecognizer;
     private Dictionary<string, Action> actions = new Dictionary<string, Action>();
     private DoorBehaviour door;
+    private ChestBehaviour chest;
     private Rigidbody pushable;
     void Start()
     {
@@ -88,12 +89,7 @@ public class VoiceManagement : MonoBehaviour
             pushable = other.transform.parent.GetComponent<Rigidbody>();
 
         }
+
+        chest = other.GetComponent<ChestBehaviour>();
     }
-    //private void Update()
-    //{
-    //        if(Input.GetKeyDown(KeyCode.Space))
-    //    {
-    //        Hit();
-    //    }
-    //}
 }
