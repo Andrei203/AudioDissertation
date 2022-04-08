@@ -3,17 +3,39 @@ using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Windows.Speech;
 
 public class VoiceManagement : MonoBehaviour
 {
+    [Serializable]
+    public struct Keyword
+    {
+        public string phrase;
+        public UnityEvent function;
+    }
+
+    public Keyword[] Keywords = new Keyword[0];
     private KeywordRecognizer KeywordRecognizer;
-    private Dictionary<string, Action> actions = new Dictionary<string, Action>();
+    //private Dictionary<string, Action> actions = new Dictionary<string, Action>();
+    private Dictionary<string, UnityEvent> events = new Dictionary<string, UnityEvent>();
     private DoorBehaviour door;
     private ChestBehaviour chest;
     private Rigidbody pushable;
     void Start()
     {
+        string[] phrases = new string[Keywords.Length];
+        int i = 0;
+        foreach (Keyword keyword in Keywords)
+        {
+            phrases[i++] = keyword.phrase;
+            events.Add(keyword.phrase,keyword.function);
+        }
+
+        KeywordRecognizer = new KeywordRecognizer(phrases);
+        KeywordRecognizer.OnPhraseRecognized += voiceRecognised;
+        KeywordRecognizer.Start();
+        /*
         actions.Add("Forward", Forward);
         actions.Add("up", Up);
         actions.Add("left", Left);
@@ -27,66 +49,67 @@ public class VoiceManagement : MonoBehaviour
         actions.Add("ChestClose", CloseChest);
         KeywordRecognizer = new KeywordRecognizer(actions.Keys.ToArray());
         KeywordRecognizer.OnPhraseRecognized += voiceRecognised;
-        KeywordRecognizer.Start();
+        KeywordRecognizer.Start();*/
     }
 
     private void voiceRecognised(PhraseRecognizedEventArgs speech)
     {
         Debug.Log(speech.text);
-        actions[speech.text].Invoke();
+        events[speech.text].Invoke();
+        //actions[speech.text].Invoke();
     }
 
-    private void Forward()
+    public void Forward()
     {
         transform.Translate(0, 0, 1);
         
     }
-    private void Up()
+    public void Up()
     {
         transform.Translate(0, 1, 0);
         
     }
-    private void Left()
+    public void Left()
     {
         transform.Translate(-1, 0, 0);
     } 
-    private void Right()
+    public void Right()
     {
         transform.Translate(1, 0, 0);
     }
-    private void Down()
+    public void Down()
     {
         transform.Translate(0, -1, 0);
         
     } 
-    private void Back()
+    public void Back()
     {
         transform.Translate(0, 0, -1);
         
     }
-    private void Open()
+    public void Open()
     {
         if (door == null) return;
         door.OpenDoor();
     }
-    private void Close()
+    public void Close()
     {
         if (door == null) return;
         door.CloseDoor();
     }
-    private void OpenChest()
+    public void OpenChest()
     {
         if (chest == null) return;
         chest.ChestOpen();
     }
-    private void CloseChest()
+    public void CloseChest()
     {
         if (chest == null) return;
         chest.ChestClosed();
     }
 
 
-    private void Hit()
+    public void Hit()
     {
         if (pushable == null) return;
         pushable.AddForce(new Vector3(1000.0f, 0.0f), ForceMode.Impulse); 

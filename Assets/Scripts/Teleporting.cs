@@ -12,7 +12,7 @@ public class Teleporting : MonoBehaviour
 
    private void OnTriggerEnter(Collider other)
    {
-      if (ignore) return;
+      if (ignore || other.gameObject != player) return;
       StartCoroutine(Teleport());
    }
 
@@ -23,10 +23,11 @@ public class Teleporting : MonoBehaviour
 
    IEnumerator Teleport()
           {
-             yield return new WaitForSeconds(1);
-             var position = teleport.transform.position;
-             player.transform.position = new Vector3(position.x,
-                position.y, position.z);
+             //yield return new WaitForSeconds(1);
+             if (teleport == null) yield break;
+             //player.transform.position = teleport.transform.position;
+             player.transform.position += teleport.transform.position - transform.position;
              teleport.ignore = true;
+             yield return null;
           }
 }
