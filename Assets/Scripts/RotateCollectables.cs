@@ -9,6 +9,6 @@ public class RotateCollectables : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(cubeRotate * (rotateSpeed * Time.deltaTime));  
+        transform.Rotate(cubeRotate * rotateSpeed * Time.deltaTime);  
     }
 }
