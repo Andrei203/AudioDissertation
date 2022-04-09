@@ -72,7 +72,16 @@ public class VoiceManagement : MonoBehaviour
     public void Left()
     {
         transform.Translate(-1, 0, 0);
-    } 
+    }
+
+    public void rotateLeft()
+    {
+        transform.Rotate(0,-90,0);
+    }   
+    public void rotateRight()
+    {
+        transform.Rotate(0.0f,90,0);
+    }
     public void Right()
     {
         transform.Translate(1, 0, 0);

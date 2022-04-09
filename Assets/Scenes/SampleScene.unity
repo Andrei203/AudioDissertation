@@ -2692,7 +2692,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - phrase: Opem Chest
+  - phrase: Open Chest
     function:
       m_PersistentCalls:
         m_Calls:
@@ -2715,6 +2715,38 @@ MonoBehaviour:
         - m_Target: {fileID: 1110891387}
           m_TargetAssemblyTypeName: VoiceManagement, Assembly-CSharp
           m_MethodName: CloseChest
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrase: Rotate Left
+    function:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1110891387}
+          m_TargetAssemblyTypeName: VoiceManagement, Assembly-CSharp
+          m_MethodName: rotateLeft
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrase: Rotate Right
+    function:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1110891387}
+          m_TargetAssemblyTypeName: VoiceManagement, Assembly-CSharp
+          m_MethodName: rotateRight
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
