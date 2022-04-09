@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class NPCBehaviour : MonoBehaviour
@@ -9,7 +10,18 @@ public class NPCBehaviour : MonoBehaviour
     public float minDist;
     public float followSpeed; 
     public float pushRate;
-    public int enemyHealth = 3;
+    public int enemyHealth = 1; 
+    public int takeDamage = 1;
+    // public VoiceManagement vc;
+
+
+  /*  public void enemyDamaged(int takeDamage)
+    {
+        if (enemyHealth <= 0)
+        {
+            enemyHealth -= takeDamage;
+        }
+    }*/
     void Update()
     {
         transform.LookAt(Player.transform);
@@ -28,3 +40,4 @@ public class NPCBehaviour : MonoBehaviour
     }
 }
 // need 2 fix bug enemy goes off rail after being hit. 
+

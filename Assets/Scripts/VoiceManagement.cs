@@ -23,7 +23,7 @@ public class VoiceManagement : MonoBehaviour
     private ChestBehaviour chest;
     private Rigidbody pushable;
     public NPCBehaviour npc;
-    
+    //im trying to make a reference to the enemy script 
     void Start()
     {
         string[] phrases = new string[Keywords.Length];
@@ -124,11 +124,13 @@ public class VoiceManagement : MonoBehaviour
     {
         if (pushable == null) return;
         pushable.AddForce(new Vector3(5.0f, 0.0f), ForceMode.Impulse);
-      /*  if (npc.enemyHealth <= 0)
+       
+        npc.enemyHealth -= npc.takeDamage; 
+       if (npc.enemyHealth <= 0)
         {
-            npc.GetComponent<GameObject>();
-            Destroy(gameObject);
-        }*/
+           
+            Destroy(npc.gameObject);
+        }
     }
 
 
