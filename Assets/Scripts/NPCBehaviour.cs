@@ -5,10 +5,10 @@ using UnityEngine;
 public class NPCBehaviour : MonoBehaviour
 {
     public GameObject Player;
-    public float AllowedDistance = 5;
-    public float followSpeed;
-
-    // Update is called once per frame
+    public float AllowedDistance;
+    public float minDist;
+    public float followSpeed; 
+    public float pushRate;
     void Update()
     {
         transform.LookAt(Player.transform);
@@ -16,6 +16,13 @@ public class NPCBehaviour : MonoBehaviour
         if (TargetDistance < AllowedDistance)
         {
             transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, followSpeed * Time.deltaTime);
+        }
+        
+        if (TargetDistance < minDist)
+        {
+            
+            Vector3 dir = (Player.transform.position - this.transform.position);
+            Player.GetComponent<Rigidbody>().AddForce(dir * pushRate, ForceMode.Impulse); 
         }
     }
 }

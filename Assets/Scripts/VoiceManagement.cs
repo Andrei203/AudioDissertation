@@ -22,6 +22,7 @@ public class VoiceManagement : MonoBehaviour
     private DoorBehaviour door;
     private ChestBehaviour chest;
     private Rigidbody pushable;
+    
     void Start()
     {
         string[] phrases = new string[Keywords.Length];
@@ -122,6 +123,7 @@ public class VoiceManagement : MonoBehaviour
     {
         if (pushable == null) return;
         pushable.AddForce(new Vector3(1000.0f, 0.0f), ForceMode.Impulse); 
+        
     }
 
 
