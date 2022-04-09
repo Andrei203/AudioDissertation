@@ -9,6 +9,7 @@ public class NPCBehaviour : MonoBehaviour
     public float minDist;
     public float followSpeed; 
     public float pushRate;
+    public int enemyHealth = 3;
     void Update()
     {
         transform.LookAt(Player.transform);
@@ -26,3 +27,4 @@ public class NPCBehaviour : MonoBehaviour
         }
     }
 }
+// need 2 fix bug enemy goes off rail after being hit. 

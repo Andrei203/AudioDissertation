@@ -22,6 +22,7 @@ public class VoiceManagement : MonoBehaviour
     private DoorBehaviour door;
     private ChestBehaviour chest;
     private Rigidbody pushable;
+    public NPCBehaviour npc;
     
     void Start()
     {
@@ -122,8 +123,12 @@ public class VoiceManagement : MonoBehaviour
     public void Hit()
     {
         if (pushable == null) return;
-        pushable.AddForce(new Vector3(1000.0f, 0.0f), ForceMode.Impulse); 
-        
+        pushable.AddForce(new Vector3(5.0f, 0.0f), ForceMode.Impulse);
+      /*  if (npc.enemyHealth <= 0)
+        {
+            npc.GetComponent<GameObject>();
+            Destroy(gameObject);
+        }*/
     }
 
 
