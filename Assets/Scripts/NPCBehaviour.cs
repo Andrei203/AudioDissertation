@@ -10,8 +10,9 @@ public class NPCBehaviour : MonoBehaviour
     public float minDist;
     public float followSpeed; 
     public float pushRate;
-    public int enemyHealth = 1; 
+    public int enemyHealth = 3; 
     public int takeDamage = 1;
+    public int heavyDamage = 2;
     // public VoiceManagement vc;
 
 

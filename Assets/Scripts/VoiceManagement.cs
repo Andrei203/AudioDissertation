@@ -63,7 +63,7 @@ public class VoiceManagement : MonoBehaviour
 
     public void Forward()
     {
-        transform.Translate(0, 0, 1);
+        transform.Translate(0, 0, 1.25f);
         
     }
     public void Up()
@@ -73,7 +73,7 @@ public class VoiceManagement : MonoBehaviour
     }
     public void Left()
     {
-        transform.Translate(-1, 0, 0);
+        transform.Translate(-1.25f, 0, 0);
     }
 
     public void rotateLeft()
@@ -86,7 +86,7 @@ public class VoiceManagement : MonoBehaviour
     }
     public void Right()
     {
-        transform.Translate(1, 0, 0);
+        transform.Translate(1.25f, 0, 0);
     }
     public void Down()
     {
@@ -95,7 +95,7 @@ public class VoiceManagement : MonoBehaviour
     } 
     public void Back()
     {
-        transform.Translate(0, 0, -1);
+        transform.Translate(0, 0, -1.25f);
         
     }
     public void Open()
@@ -126,13 +126,23 @@ public class VoiceManagement : MonoBehaviour
         pushable.AddForce(new Vector3(5.0f, 0.0f), ForceMode.Impulse);
        
         npc.enemyHealth -= npc.takeDamage; 
+        Debug.Log(npc.enemyHealth);
        if (npc.enemyHealth <= 0)
         {
-           
+            
             Destroy(npc.gameObject);
         }
     }
 
+    public void HeavyHit()
+    {
+        npc.enemyHealth -= npc.heavyDamage;
+        Debug.Log(npc.enemyHealth);
+        if (npc.enemyHealth <= 0)
+        {
+            Destroy(npc.gameObject);
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
