@@ -2293,7 +2293,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1076049273}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 97.345924, y: 134, z: -130.71}
+  m_LocalPosition: {x: 97.345924, y: 134, z: -129.81}
   m_LocalScale: {x: 0.59206, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 117523928}
@@ -2769,6 +2769,38 @@ MonoBehaviour:
         - m_Target: {fileID: 1110891387}
           m_TargetAssemblyTypeName: VoiceManagement, Assembly-CSharp
           m_MethodName: HeavyHit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrase: Dodge Left
+    function:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1110891387}
+          m_TargetAssemblyTypeName: VoiceManagement, Assembly-CSharp
+          m_MethodName: dodgeLeft
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phrase: Dodge Right
+    function:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1110891387}
+          m_TargetAssemblyTypeName: VoiceManagement, Assembly-CSharp
+          m_MethodName: dodgeRight
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

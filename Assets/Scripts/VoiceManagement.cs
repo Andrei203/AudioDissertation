@@ -84,6 +84,15 @@ public class VoiceManagement : MonoBehaviour
     {
         transform.Rotate(0.0f,90,0);
     }
+
+    public void dodgeLeft()
+    {
+        transform.Translate(2.0f, 0, 0);
+    }
+    public void dodgeRight()
+    {
+        transform.Translate(-2.0f, 0, 0);
+    }
     public void Right()
     {
         transform.Translate(1.25f, 0, 0);
@@ -98,6 +107,8 @@ public class VoiceManagement : MonoBehaviour
         transform.Translate(0, 0, -1.25f);
         
     }
+    
+    
     public void Open()
     {
         if (door == null) return;
@@ -122,16 +133,16 @@ public class VoiceManagement : MonoBehaviour
 
     public void Hit()
     {
-        if (pushable == null) return;
-        pushable.AddForce(new Vector3(5.0f, 0.0f), ForceMode.Impulse);
+        //if (pushable == null) return;
+       // pushable.AddForce(new Vector3(5.0f, 0.0f), ForceMode.Impulse);
        
         npc.enemyHealth -= npc.takeDamage; 
         Debug.Log(npc.enemyHealth);
        if (npc.enemyHealth <= 0)
-        {
+       {
             
-            Destroy(npc.gameObject);
-        }
+            Destroy(npc.gameObject); 
+       }
     }
 
     public void HeavyHit()
