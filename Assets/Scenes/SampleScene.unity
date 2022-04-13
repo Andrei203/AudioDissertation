@@ -1465,7 +1465,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543492824}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -1.3971746, y: 1.5, z: -4.0994415}
+  m_LocalPosition: {x: -1.451, y: 0.41, z: -4.0994415}
   m_LocalScale: {x: 0.21708974, y: 0.5, z: 0.63337874}
   m_Children:
   - {fileID: 769215099}
@@ -2959,13 +2959,13 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - phrase: 'Dodge '
+  - phrase: DODGE
     function:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1110891387}
           m_TargetAssemblyTypeName: VoiceManagement, Assembly-CSharp
-          m_MethodName: dodge
+          m_MethodName: Dodge
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

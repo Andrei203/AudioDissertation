@@ -87,7 +87,7 @@ public class VoiceManagement : MonoBehaviour
     
     public void Dodge()
     {
-        transform.Translate(0, 0, -2.00f);
+        transform.Translate(0, 0, -4.00f);
     }
     public void Right()
     {
