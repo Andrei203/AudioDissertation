@@ -126,7 +126,11 @@ public class VoiceManagement : MonoBehaviour
         chest.ChestClosed();
     }
 
-
+    public void Push()
+    {
+        if (pushable == null) return;
+        pushable.AddForce(new Vector3(300.0f, 0.0f), ForceMode.Impulse);
+    }
     public void Hit()
     {
         //if (pushable == null) return;
