@@ -16,7 +16,7 @@ public class MovementTestCode : MonoBehaviour
       float zDirection = Input.GetAxis("Vertical");
 
 
-      Vector3 moveDirection = new Vector3(xDirection, 0.0f, zDirection);
+      Vector3 moveDirection = transform.forward * zDirection + transform.right * xDirection;
       
       transform.position += moveDirection * (speed * Time.deltaTime);
    }

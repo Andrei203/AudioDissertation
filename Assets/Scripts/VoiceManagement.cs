@@ -73,7 +73,7 @@ public class VoiceManagement : MonoBehaviour
     }
     public void Left()
     {
-        transform.Translate(-1.25f, 0, 0);
+        transform.Translate(-1.5f, 0, 0);
     }
 
     public void rotateLeft()
@@ -91,7 +91,7 @@ public class VoiceManagement : MonoBehaviour
     }
     public void Right()
     {
-        transform.Translate(1.25f, 0, 0);
+        transform.Translate(1.5f, 0, 0);
     }
     public void Down()
     {
@@ -129,7 +129,7 @@ public class VoiceManagement : MonoBehaviour
     public void Push()
     {
         if (pushable == null) return;
-        pushable.AddForce(new Vector3(300.0f, 0.0f), ForceMode.Impulse);
+        pushable.AddForce((pushable.transform.position - transform.position).normalized * 10.0F, ForceMode.Impulse);
     }
     public void Hit()
     {
