@@ -1068,7 +1068,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 412199742}
   m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -75.14, y: 89.64015, z: -151.2}
+  m_LocalPosition: {x: -74.49, y: 89.64015, z: -151.2}
   m_LocalScale: {x: 0.59206, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1197482420}
@@ -3071,7 +3071,7 @@ MonoBehaviour:
     function:
       m_PersistentCalls:
         m_Calls: []
-  - phrase: Open
+  - phrase: Open Door
     function:
       m_PersistentCalls:
         m_Calls:
@@ -3087,7 +3087,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - phrase: Close
+  - phrase: Close Door
     function:
       m_PersistentCalls:
         m_Calls:
@@ -4937,7 +4937,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 125, y: 0}
-  m_SizeDelta: {x: 250, y: 320}
+  m_SizeDelta: {x: 250, y: 415}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1642615680
 MonoBehaviour:
@@ -4961,10 +4961,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -4976,7 +4976,8 @@ MonoBehaviour:
     = MOVE LEFT\nRIGHT = MOVE RIGHT\n\nRotate Left = Rotates Left\nRotate Right =
     Rotates Right\n\n--/Interactive Area/--\nOpen Chest/Door = Opens Chest/Door\nClose
     Chest/Door = Closes Chest/Door\nPush = Pushes cube\n\n--/Combat Area/--\nHit
-    = Light Attack(1 DMG)\nHeavy Hit = Heavy Attack (2 DMG)\nDodge = Leap backwards\n"
+    = Light Attack(1 DMG)\nHeavy Hit = Heavy Attack (2 DMG)\nDodge = Leap backwards\nEnemy
+    has 3 health.\n"
 --- !u!222 &1642615681
 CanvasRenderer:
   m_ObjectHideFlags: 0
