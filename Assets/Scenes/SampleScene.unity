@@ -3215,6 +3215,22 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - phrase: Quit Game
+    function:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1110891387}
+          m_TargetAssemblyTypeName: VoiceManagement, Assembly-CSharp
+          m_MethodName: Quit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   npc: {fileID: 423828378}
 --- !u!65 &1110891388
 BoxCollider:
@@ -3317,7 +3333,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1110891386}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0887d975b24c2db4da98835fd2995bd2, type: 3}
   m_Name: 
@@ -4291,8 +4307,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 2.2204466e-16, z: 10.000002}
-  m_Center: {x: 0.0000019073486, y: 0.0000076293945, z: 0}
+  m_Size: {x: 10, y: 0, z: 10.000002}
+  m_Center: {x: 0.0000020134662, y: 0.0000076293945, z: -2.5849394e-26}
 --- !u!23 &1331418760
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4550,8 +4566,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 2.2204466e-16, z: 10.000002}
-  m_Center: {x: 0.0000019073486, y: 0.0000076293945, z: 0}
+  m_Size: {x: 10, y: 0, z: 10.000002}
+  m_Center: {x: 0.0000020134662, y: 0.0000076293945, z: -2.5849394e-26}
 --- !u!23 &1502751063
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4937,7 +4953,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 125, y: 0}
-  m_SizeDelta: {x: 250, y: 415}
+  m_SizeDelta: {x: 250, y: 450.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1642615680
 MonoBehaviour:
@@ -4974,10 +4990,10 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "COMMAND LIST: \n\nFORWARD = MOVE AHEAD\nBACK = MOVE BACKWARDS\n\nLEFT
     = MOVE LEFT\nRIGHT = MOVE RIGHT\n\nRotate Left = Rotates Left\nRotate Right =
-    Rotates Right\n\n--/Interactive Area/--\nOpen Chest/Door = Opens Chest/Door\nClose
-    Chest/Door = Closes Chest/Door\nPush = Pushes cube\n\n--/Combat Area/--\nHit
-    = Light Attack(1 DMG)\nHeavy Hit = Heavy Attack (2 DMG)\nDodge = Leap backwards\nEnemy
-    has 3 health.\n"
+    Rotates Right\n\nQuit Game = Application Quit\n\n--/Interactive Area/--\nOpen
+    Chest/Door = Opens Chest/Door\nClose Chest/Door = Closes Chest/Door\nPush = Pushes
+    cube\n\n--/Combat Area/--\nHit = Light Attack(1 DMG)\nHeavy Hit = Heavy Attack
+    (2 DMG)\nDodge = Leap backwards\nEnemy has 3 health.\n"
 --- !u!222 &1642615681
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5768,8 +5784,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 2.2204466e-16, z: 10.000002}
-  m_Center: {x: 0.0000019073486, y: 0.0000076293945, z: 0}
+  m_Size: {x: 10, y: 1.0536429, z: 10.000002}
+  m_Center: {x: 0.0000020134662, y: -0.5268139, z: 3.8105048e-16}
 --- !u!23 &2013934322
 MeshRenderer:
   m_ObjectHideFlags: 0

@@ -145,6 +145,11 @@ public class VoiceManagement : MonoBehaviour
        }
     }
 
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
     public void HeavyHit()
     {
         npc.enemyHealth -= npc.heavyDamage;
